@@ -7,16 +7,22 @@ function toRoman($int) {
 	$roman = '';
 
 	$romanDigits = array(
-		1000 => 'M',
-		500 => 'D',
-		100 => 'C',
-		50 => 'L',
-		10 => 'X',
-		5 => 'V',
-		1 => 'I',
+		'M' => 1000,
+		'CM' => 900,
+		'D' => 500,
+		'CD' => 400,
+		'C' => 100,
+		'XC' => 90,
+		'L' => 50,
+		'XL' => 40,
+		'X' => 10,
+		'IX' => 9,
+		'V' => 5,
+		'IV' => 4,
+		'I' => 1,
 	);
 
-	foreach ($romanDigits as $value => $char) {
+	foreach ($romanDigits as $char => $value) {
 		$matches = intval($int / $value);
 
 		$roman .= str_repeat($char, $matches);
