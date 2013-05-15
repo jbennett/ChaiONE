@@ -27,6 +27,8 @@
 		3B7D4853174344F6000213E5 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D4852174344F6000213E5 /* PostCell.m */; };
 		3B7D48571743470A000213E5 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D48551743470A000213E5 /* user.png */; };
 		3B7D48581743470A000213E5 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D48561743470A000213E5 /* user@2x.png */; };
+		3B7D485A17439E8A000213E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7D485917439E8A000213E5 /* QuartzCore.framework */; };
+		3B7D485E1743A459000213E5 /* UIImage+ImageNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D485D1743A459000213E5 /* UIImage+ImageNames.m */; };
 		EE14613F21B040C9820BA227 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF6ECBDD7C54EA593BA6D23 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,9 @@
 		3B7D4852174344F6000213E5 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCell.m; path = classes/PostCell.m; sourceTree = "<group>"; };
 		3B7D48551743470A000213E5 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = images/user.png; sourceTree = "<group>"; };
 		3B7D48561743470A000213E5 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user@2x.png"; path = "images/user@2x.png"; sourceTree = "<group>"; };
+		3B7D485917439E8A000213E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B7D485C1743A459000213E5 /* UIImage+ImageNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageNames.h"; path = "classes/UIImage+ImageNames.h"; sourceTree = "<group>"; };
+		3B7D485D1743A459000213E5 /* UIImage+ImageNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageNames.m"; path = "classes/UIImage+ImageNames.m"; sourceTree = "<group>"; };
 		3CF6ECBDD7C54EA593BA6D23 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D196C41D0C48DDA9146E42 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -78,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7D485A17439E8A000213E5 /* QuartzCore.framework in Frameworks */,
 				3B51C99A1742A52C0055492C /* UIKit.framework in Frameworks */,
 				3B51C99C1742A52C0055492C /* Foundation.framework in Frameworks */,
 				3B51C99E1742A52C0055492C /* CoreGraphics.framework in Frameworks */,
@@ -121,6 +127,7 @@
 		3B51C9981742A52C0055492C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B7D485917439E8A000213E5 /* QuartzCore.framework */,
 				3B51C9991742A52C0055492C /* UIKit.framework */,
 				3B51C99B1742A52C0055492C /* Foundation.framework */,
 				3B51C99D1742A52C0055492C /* CoreGraphics.framework */,
@@ -133,6 +140,7 @@
 		3B51C99F1742A52D0055492C /* ADN Firehose */ = {
 			isa = PBXGroup;
 			children = (
+				3B7D485B1743A443000213E5 /* categories */,
 				3B7D484D17433881000213E5 /* controllers */,
 				3B7D484C1743387A000213E5 /* views */,
 				3B7D484B17433873000213E5 /* model */,
@@ -212,6 +220,15 @@
 				3B7D48561743470A000213E5 /* user@2x.png */,
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		3B7D485B1743A443000213E5 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D485C1743A459000213E5 /* UIImage+ImageNames.h */,
+				3B7D485D1743A459000213E5 /* UIImage+ImageNames.m */,
+			);
+			name = categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +378,7 @@
 				3B51C9B61742A52D0055492C /* ViewController.m in Sources */,
 				3B7D4850174339BA000213E5 /* Post.m in Sources */,
 				3B7D4853174344F6000213E5 /* PostCell.m in Sources */,
+				3B7D485E1743A459000213E5 /* UIImage+ImageNames.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
