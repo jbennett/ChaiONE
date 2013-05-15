@@ -10,4 +10,14 @@
 
 @interface Post : NSObject
 
+@property(nonatomic, strong) NSString *username;
+@property(nonatomic, strong) NSString *text;
+@property(nonatomic, strong) NSURL *imageURL;
+@property(nonatomic, strong) UIImage *image;
+
++ (id)initWithDictionary:(NSDictionary *)values;
++ (id)createArray:(NSArray *)objects;
+
+- (id)initWithDictionary:(NSDictionary *)values;
+
 @end
