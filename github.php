@@ -29,21 +29,15 @@ foreach ($contributors as $contributor) {
 
 		$month = date('F', $week->w);
 
-		if (!isset($monthly[$month])) {
-			$monthly[$month] = 0;
+		if (!isset($stats[$month])) {
+			$stats[$month] = array();
 		}
 
-		$monthly[$month] += $week->c; // using commits as the measure of active, might be better to do additions + deletions
-	}
-
-	// update stats.
-	foreach ($monthly as $index => $month) {
-		if (!isset($stats[$index])) {
-			$stats[$index] = array();
+		if (!isset($stats[$month][$contributor->author->login])) {
+			$stats[$month][$contributor->author->login] = 0;
 		}
 
-		// for each month, insert the authors name at index specified by their commit count (FIXME: overwriting)
-		$stats[$index][$contributor->author->login] = $monthly[$index];
+		$stats[$month][$contributor->author->login] += $week->c; // using commits as the measure of active, might be better to do additions + deletions
 	}
 }
 
