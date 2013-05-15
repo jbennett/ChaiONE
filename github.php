@@ -16,11 +16,10 @@ $content = curl_exec($ch);
 curl_close($ch);
 
 $content = utf8_encode($content);
-$json = json_decode($content); // get json
+$contributors = json_decode($content); // get json
 
-$stats = array();
-foreach ($json as $contributor) {
-	$monthly = array();
+$stats = array(); // $stats['may']['jonbca'] = 123;
+foreach ($contributors as $contributor) {
 
 	// agregate weekly commits by month
 	foreach ($contributor->weeks as $week) {
