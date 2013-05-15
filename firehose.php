@@ -32,7 +32,9 @@ $posts = $json->data;
  	}
 	.refreshButton:hover { background: #ddd; }
 	.refreshButton:active { background: #aaa; }
-	.nojs .refreshButton { display: none; } /*only allow JS triggering, could do a page refresh as fallback or something*/
+	.nojs .refreshButton { display: none; } /* only allow JS triggering, could do a page refresh as fallback or something */
+
+	.split { border-top: 1px solid red; } /* subtle */
 	</style>
 </head>
 
@@ -78,15 +80,18 @@ $posts = $json->data;
 				$.ajax(url + highwater, {
 					success: function(data, text, xhr) {
 						var nodes = []
-						if (data.data) { // make sure
+						if (data.data && data.data.length) { // make sure
 							data.data.forEach(function(post) {
 								// push new posts onto array
 								nodes.push(createPost(post.user.username, post.html, post.id));
 							});
-						}
 
-						highwater = data.meta.max_id; // update highwater mark to ensure we don't try to load old posts
-						$posts.prepend(nodes); // add nodes to page
+							// mark top of list before adding more
+							$posts.find('.post').removeClass('split').first().addClass('split');
+
+							highwater = data.meta.max_id; // update highwater mark to ensure we don't try to load old posts
+							$posts.prepend(nodes); // add nodes to page
+						}
 					},
 					complete: function(xhr, text) {
 						loading = false;
